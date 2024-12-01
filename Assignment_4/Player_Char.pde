@@ -1,7 +1,7 @@
 class Player {
   float x, y, w, h;
   float vx, vy;
-  PVector velocity;
+  float maxSpeed, accelerate;
   Player () {
 
     x = width/2;
@@ -10,21 +10,34 @@ class Player {
     h = 50;
     vx = 0;
     vy = 0;
-    
+    maxSpeed = 10;
+    accelerate = 0.3;
   }
   void update () {
     //check for keys
     if (LEFT) {
-      vx = -5;
+      //vx = -5;
+      if (vx > -maxSpeed) {
+        vx -= accelerate;
+      }
     } else if (RIGHT) {
-      vx = 5;
+      //vx = 5;
+      if (vx < maxSpeed) {
+        vx += accelerate;
+      }
     } else if (!LEFT && !RIGHT) {
       vx = 0;
     }//horizontal check for keys
     if (UP) {
-      vy = -5;
+      //vy = -5;
+      if (vy > -maxSpeed) {
+        vy -= accelerate;
+      }
     } else if (DOWN) {
-      vy = 5;
+      //vy = 5;
+      if (vy < maxSpeed) {
+        vy += accelerate;
+      }
     } else if (!UP && !DOWN) {
       vy = 0;
     }//vertical check for keys

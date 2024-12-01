@@ -1,15 +1,19 @@
-
+Player p;
 boolean LEFT, RIGHT, UP, DOWN;
 void setup() {
-  size(400, 400);
+  size(800, 600);
   LEFT = false;
   RIGHT = false;
   UP = false;
   DOWN = false;
+  
+  p = new Player ();
 }
 
 void draw() {
   background(0);
+  p.update();
+  p.display();
 }
 
 void keyPressed () {

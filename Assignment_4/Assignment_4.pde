@@ -29,3 +29,21 @@ void keyPressed () {
     DOWN = true;
   }
 }
+
+void keyReleased () {
+  if (keyCode == 37) {
+    LEFT = false;
+  }
+  
+  if (keyCode == 38) {
+    UP = false;
+  }
+  
+  if (keyCode == 39) {
+    RIGHT = false;
+  }
+  
+  if (keyCode == 40) {
+    DOWN = false;
+  }
+}

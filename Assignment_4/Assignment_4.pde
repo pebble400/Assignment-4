@@ -1,4 +1,5 @@
 Player p;
+Enemy e;
 boolean LEFT, RIGHT, UP, DOWN;
 void setup() {
   size(800, 600);
@@ -8,12 +9,15 @@ void setup() {
   DOWN = false;
   
   p = new Player ();
+  e = new Enemy ();
 }
 
 void draw() {
   background(0);
   p.update();
   p.display();
+  e.update();
+  e.display();
 }
 
 void keyPressed () {

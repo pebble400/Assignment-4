@@ -3,6 +3,7 @@ class Enemy {
   float vx, vy;
   float maxSpeed, accelerate;
   boolean MOVELEFT, MOVEUP, MOVERIGHT, MOVEDOWN;
+  float Swordx, Swordy, Swordw, Swordh;
   Enemy () {
 
     x = random(100, width-100);
@@ -63,6 +64,7 @@ class Enemy {
     if (MOVEDOWN) {
       vy = maxSpeed;
     }
+    
     //update position
     x += vx;
     y += vy;

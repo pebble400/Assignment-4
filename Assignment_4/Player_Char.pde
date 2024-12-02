@@ -2,16 +2,21 @@ class Player {
   float x, y, w, h;
   float vx, vy;
   float maxSpeed, accelerate;
+  float offsetx, offsety;
+  Sword s;
   Player () {
 
-    x = width/2;
-    y = width/2;
+    x = width/4;
+    y = width/4;
     w = 50;
     h = 50;
     vx = 0;
     vy = 0;
     maxSpeed = 10;
     accelerate = 0.3;
+    offsetx = 5;
+    offsety = -40;
+    s = new Sword(x+offsetx, y+offsety);
   }
   void update () {
     //check for keys
@@ -47,6 +52,9 @@ class Player {
     //update position
     x += vx;
     y += vy;
+    //update sword position
+    s.x = x+offsetx;
+    s.y = y+offsety;
     //boundary check
     if (x < -w) {
       x = width;
@@ -62,6 +70,8 @@ class Player {
   void display () {
     fill (255, 0, 0);
     rect (x, y, w, h);
+    s.update();
+    s.display();
   }
 }
 

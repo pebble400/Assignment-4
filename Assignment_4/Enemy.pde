@@ -5,13 +5,13 @@ class Enemy {
   boolean MOVELEFT, MOVEUP, MOVERIGHT, MOVEDOWN;
   Enemy () {
 
-    x = random(100,width-100);
-    y = random(100,height-100);
+    x = random(100, width-100);
+    y = random(100, height-100);
     w = 50;
     h = 50;
     vx = 0;
     vy = 0;
-    maxSpeed = 5;
+    maxSpeed = 1;
     accelerate = 0.3;
     MOVELEFT = false;
     MOVEUP = false;
@@ -37,8 +37,15 @@ class Enemy {
         MOVEDOWN = false;
         MOVEUP = true;
       }
-    }//end chase
-    
+    } else {
+      MOVELEFT = false;
+      MOVEUP = false;
+      MOVERIGHT = false;
+      MOVEDOWN = false;
+      vx = 0;
+      vy = 0;
+    }
+
     if (MOVELEFT) {
       vx = -maxSpeed;
     }

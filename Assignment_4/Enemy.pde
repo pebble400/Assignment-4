@@ -20,22 +20,27 @@ class Enemy {
   }
   void update () {
     float distApart = dist(x+w/2, y+h/2, p.x+p.w/2, p.y+p.h/2);
+    float dx = abs(x - p.x);
+    float dy = abs(y - p.y);
     if (distApart < 200) {
-      if (x < p.x) {
-        MOVERIGHT = true;
-        MOVELEFT = false;
-      }
-      if (x > p.x) {
-        MOVERIGHT = false;
-        MOVELEFT = true;
-      }
-      if (y < p.y) {
-        MOVEDOWN = true;
-        MOVEUP = false;
-      }
-      if (y > p.y) {
-        MOVEDOWN = false;
-        MOVEUP = true;
+      if (dx > dy) {
+        if (x < p.x) {
+          MOVERIGHT = true;
+          MOVELEFT = false;
+        }
+        if (x > p.x) {
+          MOVERIGHT = false;
+          MOVELEFT = true;
+        }
+      } else {
+        if (y < p.y) {
+          MOVEDOWN = true;
+          MOVEUP = false;
+        }
+        if (y > p.y) {
+          MOVEDOWN = false;
+          MOVEUP = true;
+        }
       }
     } else {
       MOVELEFT = false;

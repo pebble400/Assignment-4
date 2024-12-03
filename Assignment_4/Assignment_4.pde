@@ -26,6 +26,9 @@ void draw() {
     {
       s.update();
       s.display();
+      if(s.isClicked()){
+        menu = 1;
+      }
     }
     break;
 

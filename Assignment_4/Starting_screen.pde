@@ -18,7 +18,7 @@ class Start {
   }
 
   void update() {
-    if (Pressed == false) {
+    if (mousePressed == true && Pressed == false) {
       Pressed = true;
       if (mouseX>= Pos.x && mouseX <= Pos.x+Width && mouseY >= Pos.y && mouseY <= Pos.y+Height) {
 

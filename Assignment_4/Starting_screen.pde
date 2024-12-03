@@ -29,16 +29,15 @@ class Start {
       Pressed = false;
     }
   }
-  void display(){
+  void display() {
     fill(Colour);
-    rect(Pos.x,Pos.y,Width,Height);
-    
+    rect(Pos.x, Pos.y, Width, Height);
+
     fill(0);
-    textAlign(CENTER,CENTER);
-    text(Text,Pos.x+(Width/2),Pos.y+(Height/2));
+    textAlign(CENTER, CENTER);
+    text(Text, Pos.x+(Width/2), Pos.y+(Height/2));
   }
-  boolean isClicked(){
+  boolean isClicked() {
     return Clicked;
   }
-  
 }

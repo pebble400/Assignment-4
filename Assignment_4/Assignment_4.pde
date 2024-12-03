@@ -16,7 +16,7 @@ void setup() {
 
   p = new Player ();
   e = new Enemy ();
-  s = new Start ();
+  s = new Start (250,350,100,50,"Start",0,200,200);
 }
 
 void draw() {

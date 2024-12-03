@@ -64,11 +64,28 @@ class Enemy {
     if (MOVEDOWN) {
       vy = maxSpeed;
     }
-    
+
     //update position
     x += vx;
     y += vy;
+    //collision
+    boolean hit = rectRect(Swordx, Swordy, Swordw, Swordh, x, y, w, h);
+    if (hit) {
+      
+    }
+    else {
+      
+    }
   }//end update
+  boolean rectRect(float Swordx, float Swordy, float Swordw, float Swordh, float x, float y, float w, float h) {
+    if (Swordx + Swordw >= x &&
+      Swordx <= x + w&&
+      Swordy + Swordh >= y&&
+      Swordy <= y + h) {
+      return true;
+    }
+    return false;
+  }
   void display () {
     fill (0, 255, 255);
     rect (x, y, w, h);

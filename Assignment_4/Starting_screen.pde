@@ -21,9 +21,24 @@ class Start {
     if (Pressed == false) {
       Pressed = true;
       if (mouseX>= Pos.x && mouseX <= Pos.x+Width && mouseY >= Pos.y && mouseY <= Pos.y+Height) {
-        
+
         Clicked = true;
       }
+    } else {
+      Clicked = false;
+      Pressed = false;
     }
   }
+  void display(){
+    fill(Colour);
+    rect(Pos.x,Pos.y,Width,Height);
+    
+    fill(0);
+    textAlign(CENTER,CENTER);
+    text(Text,Pos.x+(Width/2),Pos.y+(Height/2));
+  }
+  boolean isClicked(){
+    return Clicked;
+  }
+  
 }

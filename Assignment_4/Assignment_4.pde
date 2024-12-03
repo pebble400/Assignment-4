@@ -16,7 +16,7 @@ void setup() {
 
   p = new Player ();
   e = new Enemy ();
-  s = new Start (250,350,100,50,"Start",0,200,200);
+  s = new Start (350,350,100,50,"Start",0,200,200);
 }
 
 void draw() {
@@ -24,6 +24,8 @@ void draw() {
   switch (menu) {
   case 0:
     {
+      s.update();
+      s.display();
     }
     break;
 

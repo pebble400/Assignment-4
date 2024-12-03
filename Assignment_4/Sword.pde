@@ -12,7 +12,7 @@ class Sword {
   }
   
   void display(){
-    fill (0, 255, 0);
+    fill (255);
     rect (x, y, w, h);
   }
 }

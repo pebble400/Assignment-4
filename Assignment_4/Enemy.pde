@@ -73,13 +73,17 @@ class Enemy {
     hit = rectRect(Swordx, Swordy, Swordw, Swordh, x, y, w, h);
   }//end update
   boolean rectRect(float Swordx, float Swordy, float Swordw, float Swordh, float x, float y, float w, float h) {
+    boolean returning = false;
+
     if (Swordx + Swordw >= x &&
       Swordx <= x + w &&
       Swordy + Swordh >= y &&
       Swordy <= y + h) {
-      return true;
+
+      returning = true;
     }
-    return false;
+
+    return returning;
   }
   void display () {
     fill (0, 255, 255);

@@ -1,6 +1,5 @@
 class Enemy {
-  PVector colliderPosition;
-  float colliderRadius;
+  Boolean hit = false;
   float x, y, w, h;
   float vx, vy;
   float maxSpeed, accelerate;
@@ -71,15 +70,12 @@ class Enemy {
     x += vx;
     y += vy;
     //collision
-    boolean hit = rectRect(Swordx, Swordy, Swordw, Swordh, x, y, w, h);
-    if (hit) {
-    } else {
-    }
+    hit = rectRect(Swordx, Swordy, Swordw, Swordh, x, y, w, h);
   }//end update
   boolean rectRect(float Swordx, float Swordy, float Swordw, float Swordh, float x, float y, float w, float h) {
     if (Swordx + Swordw >= x &&
-      Swordx <= x + w&&
-      Swordy + Swordh >= y&&
+      Swordx <= x + w &&
+      Swordy + Swordh >= y &&
       Swordy <= y + h) {
       return true;
     }

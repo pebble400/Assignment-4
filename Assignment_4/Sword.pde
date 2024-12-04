@@ -1,6 +1,4 @@
 class Sword {
-  PVector colliderPosition;
-  float colliderRadius;
   
   float x, y, w, h;
 

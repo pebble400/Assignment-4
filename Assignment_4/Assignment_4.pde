@@ -40,7 +40,7 @@ void draw() {
       p.update();
       p.display();
       timer++;
-      if (timer%30 == 1) {
+      if (timer%100 == 1) {
         enemies.add(new Enemy());
       }
 
@@ -49,6 +49,10 @@ void draw() {
       for (int i=0; i<enemies.size(); i++) {
         enemies.get(i).update();
         enemies.get(i).display();
+        if(enemies.get(i).hit){
+          enemies.remove(i);
+          
+        }
       }
     }
     break;
@@ -60,46 +64,47 @@ void draw() {
       if (s.isClicked()) {
         menu = 0;
       }
-      break;
     }
-    //p.update();
-    //p.display();
-    //e.update();
-    //e.display();
+    break;
+  }
+  //p.update();
+  //p.display();
+  //e.update();
+  //e.display();
+}
+
+void keyPressed () {
+  if (keyCode == 37) {
+    LEFT = true;
   }
 
-  void keyPressed () {
-    if (keyCode == 37) {
-      LEFT = true;
-    }
-
-    if (keyCode == 38) {
-      UP = true;
-    }
-
-    if (keyCode == 39) {
-      RIGHT = true;
-    }
-
-    if (keyCode == 40) {
-      DOWN = true;
-    }
+  if (keyCode == 38) {
+    UP = true;
   }
 
-  void keyReleased () {
-    if (keyCode == 37) {
-      LEFT = false;
-    }
-
-    if (keyCode == 38) {
-      UP = false;
-    }
-
-    if (keyCode == 39) {
-      RIGHT = false;
-    }
-
-    if (keyCode == 40) {
-      DOWN = false;
-    }
+  if (keyCode == 39) {
+    RIGHT = true;
   }
+
+  if (keyCode == 40) {
+    DOWN = true;
+  }
+}
+
+void keyReleased () {
+  if (keyCode == 37) {
+    LEFT = false;
+  }
+
+  if (keyCode == 38) {
+    UP = false;
+  }
+
+  if (keyCode == 39) {
+    RIGHT = false;
+  }
+
+  if (keyCode == 40) {
+    DOWN = false;
+  }
+}

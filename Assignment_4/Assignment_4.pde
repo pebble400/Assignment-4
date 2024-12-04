@@ -3,9 +3,11 @@ int menu = 0;
 // using https://www.youtube.com/watch?v=p3rt3zDr2SE as a reference for the screen switching
 
 Player p;
-Enemy e;
-
+//Enemy e;
+ArrayList<Enemy>enemies=new ArrayList<Enemy>(); 
 Start s;
+int timer;
+
 boolean LEFT, RIGHT, UP, DOWN;
 void setup() {
   size(800, 600);
@@ -15,8 +17,9 @@ void setup() {
   DOWN = false;
 
   p = new Player ();
-  e = new Enemy ();
+  //e = new Enemy ();
   s = new Start (350,350,100,50,"Start",0,200,200);
+  
 }
 
 void draw() {
@@ -36,8 +39,17 @@ void draw() {
     {
       p.update();
       p.display();
-      e.update();
-      e.display();
+      timer++;
+      if(timer%30 == 1){
+       enemies.add(new Enemy()); 
+      }
+      
+      //e.update();
+      //e.display();
+      for(int i=0; i<enemies.size();i++){
+        enemies.get(i).update();
+        enemies.get(i).display();
+      }
     }
     break;
 

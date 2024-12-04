@@ -1,4 +1,6 @@
 class Player {
+  PVector colliderPosition;
+  float colliderRadius;
   float x, y, w, h;
   float vx, vy;
   float maxSpeed, accelerate;

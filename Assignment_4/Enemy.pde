@@ -71,18 +71,23 @@ class Enemy {
     y += vy;
     //collision
     hit = rectRect(Swordx, Swordy, Swordw, Swordh, x, y, w, h);
-    // println(x);
+   
  
     
   }//end update
   boolean rectRect(float Swordx, float Swordy, float Swordw, float Swordh, float x, float y, float w, float h) {
+    Swordx = swordX;
+    Swordy = swordY;
+    Swordw = swordW;
+    Swordh = swordH;
+    
+    println(swordX);
     boolean returning = false;
  
     if (Swordx + Swordw >= x &&
      Swordx <= x + w &&
      Swordy + Swordh >= y &&
      Swordy <= y + h) {
-    println("come");
      returning = true;
      }
 

@@ -76,12 +76,12 @@ class Enemy {
     boolean returning = false;
 
     if (Swordx + Swordw >= x &&
-      Swordx <= x + w &&
-      Swordy + Swordh >= y &&
-      Swordy <= y + h) {
-
-      returning = true;
-    }
+     Swordx <= x + w &&
+     Swordy + Swordh >= y &&
+     Swordy <= y + h) {
+     
+     returning = true;
+     }
 
     return returning;
   }

@@ -53,8 +53,8 @@ class Player {
     x += vx;
     y += vy;
     //update sword position
-    s.x = x+offsetx;
-    s.y = y+offsety;
+    swordX = x+offsetx;
+    swordY = y+offsety;
     //boundary check
     if (x < -w) {
       x = width;

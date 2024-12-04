@@ -1,19 +1,20 @@
+float swordX, swordY, swordW, swordH;
+
 class Sword {
-  
-  float x, y, w, h;
+
+
 
   Sword(float sx, float sy) {
-    x = sx;
-    y = sy;
-    w = 40;
-    h = 10;
+    swordX = sx;
+    swordY = sy;
+    swordW = 40;
+    swordH = 10;
   }
   void update () {
-    
   }
-  
-  void display(){
+
+  void display() {
     fill (255);
-    rect (x, y, w, h);
+    rect (swordX, swordY,swordW, swordH);
   }
 }

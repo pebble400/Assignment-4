@@ -56,7 +56,7 @@ class Player {
     swordX = x+offsetx;
     swordY = y+offsety;
     //player collision
-    
+
     //boundary check
     if (x < -w) {
       x = width;
@@ -68,6 +68,21 @@ class Player {
     } else if (y > height) {
       y = -h;
     }//vertical boundary check
+  }
+  boolean rectRect(float enemyx, float enemyy, float enemyw, float enemyh, float x, float y, float w, float h) {
+
+
+    println(swordX);
+    boolean returning = false;
+
+    if (enemyx + enemyw >= x &&
+      enemyx <= x + w &&
+      enemyy + enemyh >= y &&
+      enemyy <= y + h) {
+      returning = true;
+    }
+
+    return returning;
   }
   void display () {
     fill (255, 0, 0);

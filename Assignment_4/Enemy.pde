@@ -1,16 +1,17 @@
 class Enemy {
   Boolean hit = false;
-  float x, y, w, h;
+  float enemyX, enemyY, enemyW, enemyH;
+  //float x, y, w, h;
   float vx, vy;
   float maxSpeed, accelerate;
   boolean MOVELEFT, MOVEUP, MOVERIGHT, MOVEDOWN;
-  float Swordx, Swordy, Swordw, Swordh;
+  //float Swordx, Swordy, Swordw, Swordh;
   Enemy () {
 
-    x = random(100, width-100);
-    y = random(100, height-100);
-    w = 50;
-    h = 50;
+    enemyX = random(100, width-100);
+    enemyY = random(100, height-100);
+    enemyW = 50;
+    enemyH = 50;
     vx = 0;
     vy = 0;
     maxSpeed = 1;
@@ -21,25 +22,25 @@ class Enemy {
     MOVEDOWN = false;
   }
   void update () {
-    float distApart = dist(x+w/2, y+h/2, p.x+p.w/2, p.y+p.h/2);
-    float dx = abs(x - p.x);
-    float dy = abs(y - p.y);
+    float distApart = dist(enemyX+enemyW/2, enemyY+enemyY/2, p.x+p.w/2, p.y+p.h/2);
+    float dx = abs(enemyX - p.x);
+    float dy = abs(enemyY - p.y);
     if (distApart < 200) {
       if (dx > dy) {
-        if (x < p.x) {
+        if (enemyX < p.x) {
           MOVERIGHT = true;
           MOVELEFT = false;
         }
-        if (x > p.x) {
+        if (enemyX > p.x) {
           MOVERIGHT = false;
           MOVELEFT = true;
         }
       } else {
-        if (y < p.y) {
+        if (enemyY < p.y) {
           MOVEDOWN = true;
           MOVEUP = false;
         }
-        if (y > p.y) {
+        if (enemyY > p.y) {
           MOVEDOWN = false;
           MOVEUP = true;
         }
@@ -67,27 +68,27 @@ class Enemy {
     }
 
     //update position
-    x += vx;
-    y += vy;
+    enemyX += vx;
+    enemyY += vy;
     //collision
-    hit = rectRect(Swordx, Swordy, Swordw, Swordh, x, y, w, h);
+    hit = rectRect(swordX, swordY, swordW, swordH, enemyX, enemyY, enemyW, enemyH);
    
  
     
   }//end update
-  boolean rectRect(float Swordx, float Swordy, float Swordw, float Swordh, float x, float y, float w, float h) {
-    Swordx = swordX;
-    Swordy = swordY;
-    Swordw = swordW;
-    Swordh = swordH;
+  boolean rectRect(float swordX, float swordY, float swordW, float swordH, float x, float y, float w, float h) {
+    //Swordx = swordX;
+    //Swordy = swordY;
+    //Swordw = swordW;
+    //Swordh = swordH;
     
     println(swordX);
     boolean returning = false;
  
-    if (Swordx + Swordw >= x &&
-     Swordx <= x + w &&
-     Swordy + Swordh >= y &&
-     Swordy <= y + h) {
+    if (swordX + swordW >= x &&
+     swordX <= x + w &&
+     swordY + swordH >= y &&
+     swordY <= y + h) {
      returning = true;
      }
 
@@ -95,6 +96,6 @@ class Enemy {
   }
   void display () {
     fill (0, 255, 255);
-    rect (x, y, w, h);
+    rect (enemyX, enemyY, enemyW, enemyH);
   }
 }

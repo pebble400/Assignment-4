@@ -66,6 +66,24 @@ class Player {
     } else if (y > height) {
       y = -h;
     }//vertical boundary check
+  }//end update
+  boolean rectRect(float Swordx, float Swordy, float Swordw, float Swordh, float x, float y, float w, float h) {
+    Swordx = swordX;
+    Swordy = swordY;
+    Swordw = swordW;
+    Swordh = swordH;
+
+    println(swordX);
+    boolean returning = false;
+
+    if (Swordx + Swordw >= x &&
+      Swordx <= x + w &&
+      Swordy + Swordh >= y &&
+      Swordy <= y + h) {
+      returning = true;
+    }
+
+    return returning;
   }
   void display () {
     fill (255, 0, 0);

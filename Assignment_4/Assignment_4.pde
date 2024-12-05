@@ -5,6 +5,7 @@ int menu = 0;
 Player p;
 //Enemy e;
 ArrayList<Enemy>enemies=new ArrayList<Enemy>();
+boolean GameOver;
 Start s;
 int timer;
 Restart r;
@@ -37,6 +38,9 @@ void draw() {
 
   case 1:
     {
+      if(GameOver == true) {
+        menu = 2;
+      }
       p.update();
       p.display();
       timer++;
@@ -54,6 +58,7 @@ void draw() {
           
         }
       }
+      
     }
     break;
 

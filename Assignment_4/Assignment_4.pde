@@ -28,6 +28,7 @@ void draw() {
   switch (menu) {
   case 0:
     {
+      //if(r.isClicked
       s.update();
       s.display();
       if (s.isClicked()) {
@@ -53,9 +54,12 @@ void draw() {
       for (int i=0; i<enemies.size(); i++) {
         enemies.get(i).update();
         enemies.get(i).display();
+        boolean hit = enemies.get(i).rectRect(p.x,p.y,p.w,p.h, enemies.get(i).enemyX,enemies.get(i).enemyY,enemies.get(i).enemyW,enemies.get(i).enemyH);
+        if(hit == true) {
+          menu = 2;
+        }
         if(enemies.get(i).hit){
           enemies.remove(i);
-          
         }
       }
       
@@ -66,7 +70,7 @@ void draw() {
     {
       s.update();
       s.display();
-      if (s.isClicked()) {
+      if (r.isClicked()) {
         menu = 0;
       }
     }

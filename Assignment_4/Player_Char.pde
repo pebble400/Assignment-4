@@ -69,21 +69,25 @@ class Player {
       y = -h;
     }//vertical boundary check
   }
-  boolean rectRect(float enemyx, float enemyy, float enemyw, float enemyh, float x, float y, float w, float h) {
+  //boolean rectRect(float enemyx, float enemyy, float enemyw, float enemyh, float x, float y, float w, float h) {
+  //  enemyx = enemyX;
+  //  enemyy = enemyY;
+  //  enemyw = enemyW;
+  //  enemyh = enemyH;
 
 
-    println(swordX);
-    boolean returning = false;
+  //  //println(enemyx);
+  //  boolean returning = false;
 
-    if (enemyx + enemyw >= x &&
-      enemyx <= x + w &&
-      enemyy + enemyh >= y &&
-      enemyy <= y + h) {
-      returning = true;
-    }
+  //  if (enemyx + enemyw >= x &&
+  //    enemyx <= x + w &&
+  //    enemyy + enemyh >= y &&
+  //    enemyy <= y + h) {
+  //    returning = true;
+  //  }
 
-    return returning;
-  }
+  //  return returning;
+  //}
   void display () {
     fill (255, 0, 0);
     rect (x, y, w, h);

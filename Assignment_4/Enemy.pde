@@ -1,7 +1,7 @@
+//float enemyX, enemyY, enemyW, enemyH;
 class Enemy {
   Boolean hit = false;
   float enemyX, enemyY, enemyW, enemyH;
-  //float x, y, w, h;
   float vx, vy;
   float maxSpeed, accelerate;
   boolean MOVELEFT, MOVEUP, MOVERIGHT, MOVEDOWN;
@@ -76,7 +76,8 @@ class Enemy {
  
     
   }//end update
-  boolean rectRect(float swordX, float swordY, float swordW, float swordH, float x, float y, float w, float h) {
+  
+  public boolean rectRect(float swordX, float swordY, float swordW, float swordH, float x, float y, float w, float h) {
     //Swordx = swordX;
     //Swordy = swordY;
     //Swordw = swordW;

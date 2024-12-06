@@ -17,7 +17,7 @@ void setup() {
   UP = false;
   DOWN = false;
 
-  p = new Player ();
+  //p = new Player ();
   //e = new Enemy ();
   s = new Start (350, 350, 100, 50, "Start", 0, 200, 200);
   r = new Restart(350, 350, 100, 50, "Restart", 200, 0, 200);
@@ -32,6 +32,7 @@ void draw() {
       s.update();
       s.display();
       if (s.isClicked()) {
+        p = new Player ();
         menu = 1;
       }
     }
@@ -68,8 +69,8 @@ void draw() {
 
   case 2:
     {
-      s.update();
-      s.display();
+      r.update();
+      r.display();
       if (r.isClicked()) {
         menu = 0;
       }
